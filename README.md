@@ -1,33 +1,37 @@
-# Página do projeto
+# Controle Digital de Velocidade de um Motor Universal
 
-Este pacote contém uma página estática simples para o projeto de controle digital de velocidade do motor.
+Este repositório contém os arquivos desenvolvidos para o projeto de controle digital de velocidade de um motor universal, utilizando identificação experimental da planta, projeto de controladores PI, discretização e implementação em microcontrolador.
 
-## Estrutura sugerida no repositório
+O objetivo do trabalho foi modelar a bancada experimental, projetar diferentes métodos de sintonia de controladores e comparar o comportamento do sistema em simulação e na prática, considerando ensaios com e sem carga mecânica.
 
-```text
-seu-repositorio/
-├── docs/
-│   ├── index.html
-│   └── style.css
-├── codigo/
-│   ├── classico_corrigido_gptatualizado_sem_tracejado.m
-│   └── controlador_motor.ino
-├── dados/
-│   ├── sem carga (1).zip
-│   ├── com carga.zip
-│   ├── zieglernichols_sem_carga.txt
-│   └── zieglernichols_com_carga.txt
-└── relatorio/
-    └── relatorio.pdf
-```
+## Descrição do Projeto
 
-## Como publicar no GitHub Pages
+O sistema estudado é composto por um motor universal, circuito de acionamento, sensor de velocidade e microcontrolador responsável pela execução do algoritmo de controle. A identificação da planta foi realizada a partir da resposta ao degrau experimental, obtendo-se um modelo aproximado de primeira ordem.
 
-1. Envie a pasta `docs` para o repositório.
-2. No GitHub, abra o repositório.
-3. Vá em `Settings` > `Pages`.
-4. Em `Build and deployment`, selecione `Deploy from a branch`.
-5. Escolha a branch `main` e a pasta `/docs`.
-6. Salve e aguarde a publicação.
+A partir desse modelo, foram projetados e analisados diferentes controladores, com foco na comparação entre desempenho, estabilidade, sobressinal, tempo de acomodação e comportamento experimental da bancada.
 
-Depois disso, o GitHub irá gerar um link público para a página do projeto.
+## Métodos Utilizados
+
+Foram analisados os seguintes métodos de sintonia:
+
+- Root Locus por cancelamento polo-zero;
+- Ziegler-Nichols em malha aberta;
+- CHR;
+- IMC;
+- Root Locus Clássico;
+- Deadbeat, mantido como método digital direto.
+
+Os controladores PI foram discretizados utilizando três técnicas:
+
+- Tustin;
+- Euler Progressivo;
+- Euler Regressivo.
+
+A discretização foi necessária para permitir a implementação dos controladores no microcontrolador. O período de amostragem adotado foi de 100 ms, buscando um compromisso adequado entre precisão da resposta dinâmica, estabilidade da leitura e esforço computacional.
+
+## Implementação
+
+O controle foi implementado em microcontrolador utilizando a forma incremental do controlador PI:
+
+```math
+u(k) = u(k-1) + q_0e(k) + q_1e(k-1)
