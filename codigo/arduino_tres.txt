@@ -1,0 +1,242 @@
+//==============================================================================
+// CONTROLADOR PI DIGITAL PARA MOTOR CC
+// Implementação Incremental:
+//
+// u(k) = u(k-1) + q0*e(k) + q1*e(k-1)
+//
+//==============================================================================
+
+const int PIN_SENSOR = A0;
+const int PIN_PWM    = 9;
+
+//=============================================================================
+// ESCOLHA DA SINTONIA
+//=============================================================================
+//
+// SINTONIA_PI:
+// 1 -> Root Locus - Cancelamento
+// 2 -> Z-N Aberta
+// 3 -> Z-N Fechada
+// 4 -> CHR
+// 5 -> IMC
+// 6 -> Root Locus Clássico
+//
+// METODO_DISC:
+// 1 -> Tustin
+// 2 -> Euler Progressivo
+// 3 -> Euler Regressivo
+//
+//=============================================================================
+
+#define SINTONIA_PI 1
+#define METODO_DISC 1
+
+//=============================================================================
+// AJUSTE MANUAL
+//=============================================================================
+//
+// Se quiser ajustar empiricamente na bancada, coloque:
+//
+// #define USAR_AJUSTE_MANUAL 1
+//
+// e altere diretamente Kp e Ki abaixo.
+//
+//=============================================================================
+
+#define USAR_AJUSTE_MANUAL 0
+
+#if USAR_AJUSTE_MANUAL == 1
+
+float Kp = 2.06969324;
+float Ki = 0.24066200;
+
+#else
+
+#if SINTONIA_PI == 1
+// Root Locus - Cancelamento
+float Kp = 2.06969324;
+float Ki = 0.24066200;
+
+#elif SINTONIA_PI == 2
+// Z-N Aberta
+float Kp = 6.67476070;
+float Ki = 3.34072107;
+
+#elif SINTONIA_PI == 3
+// Z-N Fechada
+float Kp = 6.75000000;
+float Ki = 4.05162065;
+
+#elif SINTONIA_PI == 4
+// CHR
+float Kp = 2.59574027;
+float Ki = 0.26019850;
+
+#elif SINTONIA_PI == 5
+// IMC
+float Kp = 4.44984047;
+float Ki = 0.51742331;
+
+#elif SINTONIA_PI == 6
+// Root Locus Clássico
+float Kp = 8.38225763;
+float Ki = 12.73332011;
+
+#else
+#error "SINTONIA_PI invalida."
+#endif
+
+#endif
+
+//=============================================================================
+
+const float Ts = 0.1;                 // 100 ms
+const unsigned long intervalo_ms = 100;
+
+// Coeficientes calculados a partir de Kp, Ki e método de discretização
+float q0 = 0.0;
+float q1 = 0.0;
+
+// Estados do controlador
+float e_k   = 0.0;
+float e_k_1 = 0.0;
+
+float u_k   = 0.0;
+float u_k_1 = 0.0;
+
+// Referência em ADC
+float setpoint = 400.0;
+
+unsigned long tempo_anterior = 0;
+
+void calcularCoeficientes()
+{
+#if METODO_DISC == 1
+    // Tustin
+    q0 = Kp + (Ki * Ts) / 2.0;
+    q1 = -Kp + (Ki * Ts) / 2.0;
+
+#elif METODO_DISC == 2
+    // Euler Progressivo
+    q0 = Kp;
+    q1 = Ki * Ts - Kp;
+
+#elif METODO_DISC == 3
+    // Euler Regressivo
+    q0 = Kp + Ki * Ts;
+    q1 = -Kp;
+
+#else
+#error "METODO_DISC invalido."
+#endif
+}
+
+void setup()
+{
+    Serial.begin(9600);
+
+    pinMode(PIN_PWM, OUTPUT);
+    analogWrite(PIN_PWM, 0);
+
+    calcularCoeficientes();
+
+    Serial.println("Controlador PI iniciado.");
+
+    Serial.print("SINTONIA_PI: ");
+    Serial.println(SINTONIA_PI);
+
+    Serial.print("METODO_DISC: ");
+    Serial.println(METODO_DISC);
+
+    Serial.print("Kp: ");
+    Serial.println(Kp, 8);
+
+    Serial.print("Ki: ");
+    Serial.println(Ki, 8);
+
+    Serial.print("q0: ");
+    Serial.println(q0, 8);
+
+    Serial.print("q1: ");
+    Serial.println(q1, 8);
+}
+
+void loop()
+{
+    unsigned long tempo_atual = millis();
+
+    if (tempo_atual - tempo_anterior >= intervalo_ms)
+    {
+        tempo_anterior = tempo_atual;
+
+        //----------------------------------------------------------
+        // Leitura filtrada por média simples
+        //----------------------------------------------------------
+
+        float y_k = analogRead(PIN_SENSOR);
+
+        //----------------------------------------------------------
+        // Erro
+        //----------------------------------------------------------
+
+        e_k = setpoint - y_k;
+
+        //----------------------------------------------------------
+        // PI incremental
+        //----------------------------------------------------------
+
+        float u_calculado = u_k_1 + q0 * e_k + q1 * e_k_1;
+
+        //----------------------------------------------------------
+        // Saturação do PWM
+        //----------------------------------------------------------
+
+        if (u_calculado > 255.0)
+        {
+            u_k = 255.0;
+        }
+        else if (u_calculado < 0.0)
+        {
+            u_k = 0.0;
+        }
+        else
+        {
+            u_k = u_calculado;
+        }
+
+        //----------------------------------------------------------
+        // Atualização da memória
+        //----------------------------------------------------------
+
+        u_k_1 = u_k;
+        e_k_1 = e_k;
+
+        //----------------------------------------------------------
+        // Envio para o motor
+        //----------------------------------------------------------
+
+        analogWrite(PIN_PWM, (int)u_k);
+
+        //----------------------------------------------------------
+        // Telemetria
+        //----------------------------------------------------------
+
+        Serial.print("SP:");
+        Serial.print(setpoint);
+
+        Serial.print(",ADC:");
+        Serial.print(y_k);
+
+        Serial.print(",PWM:");
+        Serial.print(u_k);
+
+        Serial.print(",Erro:");
+        Serial.print(e_k);
+
+        Serial.print(",Kp:");
+        Serial.print(Kp);
+
+        Serial.print(",Ki:");
+        Serial.println(Ki);
+    }
+}

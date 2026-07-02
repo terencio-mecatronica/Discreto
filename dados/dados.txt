@@ -1,0 +1,1659 @@
+=== Parâmetros Calculados Dinamicamente ===
+Ganho Estático Total (K): 1.9327
+Constante de Tempo (Tau): 8.6000 s
+
+--- A. Elementos Individuais do Diagrama (Figura 1) ---
+1. Modelo do Atuador G_a(s):
+
+G_atuador =
+ 
+  0.035
+ 
+Static gain.
+Model Properties
+2. Modelo do Processo (Motor) G_m(s):
+
+G_motor =
+ 
+    966.3
+  ---------
+  8.6 s + 1
+ 
+Continuous-time transfer function.
+Model Properties
+3. Modelo do Sensor H_s(s):
+
+G_sensor =
+ 
+  0.05714
+ 
+Static gain.
+Model Properties
+--- B. Sistema em Malha Aberta ---
+Malha Aberta Contínua G_MA(s):
+
+G_ma_s =
+ 
+    1.933
+  ---------
+  8.6 s + 1
+ 
+Continuous-time transfer function.
+Model Properties
+Malha Aberta Discreta G_MA(z):
+
+G_ma_z =
+ 
+   0.02234
+  ----------
+  z - 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+--- C. Sistema em Malha Fechada ---
+1. Malha Fechada SEM Controlador FT(s) [Analógico]:
+
+FT_mf_sem_ctrl_s =
+ 
+      1.933
+  -------------
+  8.6 s + 2.933
+ 
+Continuous-time transfer function.
+Model Properties
+2. Malha Fechada SEM Controlador FT(z) [Digital - Equação da Imagem]:
+
+FT_mf_sem_ctrl_z =
+ 
+   0.02234
+  ----------
+  z - 0.9661
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+--- Calculando os métodos de controle PI ---
+=== Ziegler-Nichols Malha Fechada Estimado ===
+Ku estimado = 11.9804
+Tu estimado = 2.3359 s
+Kp ZN fechado = 5.3912
+Ki ZN fechado = 2.7706
+
+===================================================================
+      EQUAÇÕES DOS CONTROLADORES, MALHA ABERTA E MALHA FECHADA     
+===================================================================
+===================================================================
+                  1) CONTROLADORES DISCRETIZADOS C(z)              
+===================================================================
+
+============================================================
+CONTROLADOR: Root Locus - Cancelamento
+Kp = 2.06969324
+Ki = 0.24066200
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  4.163 z - 4.115
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.0817 z - 2.0577) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  2.07 z - 2.046
+  --------------
+      z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.0697 z - 2.0456) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  2.094 z - 2.07
+  --------------
+      z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.0938 z - 2.0697) / (   z - 1)
+
+
+============================================================
+CONTROLADOR: Z-N Aberta
+Kp = 6.67476070
+Ki = 3.34072107
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  13.68 z - 13.02
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   6.8418 z - 6.5077) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  6.675 z - 6.341
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   6.6748 z - 6.3407) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  7.009 z - 6.675
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   7.0088 z - 6.6748) / (   z - 1)
+
+
+============================================================
+CONTROLADOR: Z-N Fechada
+Kp = 5.39116347
+Ki = 2.77062501
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  11.06 z - 10.51
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   5.5297 z - 5.2526) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  5.391 z - 5.114
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   5.3912 z - 5.1141) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  5.668 z - 5.391
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   5.6682 z - 5.3912) / (   z - 1)
+
+
+============================================================
+CONTROLADOR: CHR
+Kp = 2.59574027
+Ki = 0.26019850
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  5.218 z - 5.165
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.6088 z - 2.5827) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  2.596 z - 2.57
+  --------------
+      z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.5957 z - 2.5697) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  2.622 z - 2.596
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   2.6218 z - 2.5957) / (   z - 1)
+
+
+============================================================
+CONTROLADOR: IMC
+Kp = 4.44984047
+Ki = 0.51742331
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  8.951 z - 8.848
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   4.4757 z - 4.424) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  4.45 z - 4.398
+  --------------
+      z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   4.4498 z - 4.3981) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  4.502 z - 4.45
+  --------------
+      z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   4.5016 z - 4.4498) / (   z - 1)
+
+
+============================================================
+CONTROLADOR: Root Locus Clássico
+Kp = 8.38225763
+Ki = 12.73332011
+============================================================
+
+--- Tustin ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  18.04 z - 15.49
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   9.0189 z - 7.7456) / (   z - 1)
+
+
+--- Euler Progressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  8.382 z - 7.109
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   8.3823 z - 7.1089) / (   z - 1)
+
+
+--- Euler Regressivo ---
+Controlador discreto C(z):
+
+Cz =
+ 
+  9.656 z - 8.382
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C(z) = (   9.6556 z - 8.3823) / (   z - 1)
+
+===================================================================
+          2) FUNÇÕES EM MALHA ABERTA CONTROLADA L(z) = C(z)G(z)    
+===================================================================
+
+============================================================
+CONTROLADOR: Root Locus - Cancelamento
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+   0.04651 z - 0.04597
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.046511 z - 0.045973) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.04624 z - 0.0457
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.046242 z - 0.045705) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+   0.04678 z - 0.04624
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.04678 z - 0.046242) / (   z^2 - 1.9884 z + 0.98844)
+
+
+============================================================
+CONTROLADOR: Z-N Aberta
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1529 z - 0.1454
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.15286 z - 0.1454) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1491 z - 0.1417
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.14913 z - 0.14167) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1566 z - 0.1491
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.1566 z - 0.14913) / (   z^2 - 1.9884 z + 0.98844)
+
+
+============================================================
+CONTROLADOR: Z-N Fechada
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1235 z - 0.1174
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.12355 z - 0.11736) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1205 z - 0.1143
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.12045 z - 0.11426) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1266 z - 0.1205
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.12664 z - 0.12045) / (   z^2 - 1.9884 z + 0.98844)
+
+
+============================================================
+CONTROLADOR: CHR
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.05829 z - 0.0577
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.058286 z - 0.057705) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.058 z - 0.05741
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.057995 z - 0.057414) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.05858 z - 0.058
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.058577 z - 0.057995) / (   z^2 - 1.9884 z + 0.98844)
+
+
+============================================================
+CONTROLADOR: IMC
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+     0.1 z - 0.09884
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.099999 z - 0.098843) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+   0.09942 z - 0.09826
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.099421 z - 0.098265) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1006 z - 0.09942
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.10058 z - 0.099421) / (   z^2 - 1.9884 z + 0.98844)
+
+
+============================================================
+CONTROLADOR: Root Locus Clássico
+============================================================
+
+--- Tustin ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.2015 z - 0.1731
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.20151 z - 0.17306) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Progressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.1873 z - 0.1588
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.18728 z - 0.15883) / (   z^2 - 1.9884 z + 0.98844)
+
+
+--- Euler Regressivo ---
+Malha aberta controlada L(z) = C(z)G(z):
+
+Lz =
+ 
+    0.2157 z - 0.1873
+  ----------------------
+  z^2 - 1.988 z + 0.9884
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+L(z) = (   0.21573 z - 0.18728) / (   z^2 - 1.9884 z + 0.98844)
+
+===================================================================
+          3) FUNÇÕES EM MALHA FECHADA H(z) = Y(z)/R(z)             
+===================================================================
+
+============================================================
+CONTROLADOR: Root Locus - Cancelamento
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.09302 z - 0.09195
+  -----------------------
+  2 z^2 - 3.884 z + 1.885
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.046511 z - 0.045973) / (   z^2 - 1.9419 z + 0.94247)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.04624 z - 0.0457
+  ----------------------
+  z^2 - 1.942 z + 0.9427
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.046242 z - 0.045705) / (   z^2 - 1.9422 z + 0.94273)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+   0.04678 z - 0.04624
+  ----------------------
+  z^2 - 1.942 z + 0.9422
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.04678 z - 0.046242) / (   z^2 - 1.9417 z + 0.9422)
+
+
+============================================================
+CONTROLADOR: Z-N Aberta
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+     0.3057 z - 0.2908
+  -----------------------
+  2 z^2 - 3.671 z + 1.686
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.15286 z - 0.1454) / (   z^2 - 1.8356 z + 0.84304)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1491 z - 0.1417
+  ----------------------
+  z^2 - 1.839 z + 0.8468
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.14913 z - 0.14167) / (   z^2 - 1.8393 z + 0.84677)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1566 z - 0.1491
+  ----------------------
+  z^2 - 1.832 z + 0.8393
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.1566 z - 0.14913) / (   z^2 - 1.8318 z + 0.83931)
+
+
+============================================================
+CONTROLADOR: Z-N Fechada
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.2471 z - 0.2347
+  ----------------------
+  2 z^2 - 3.73 z + 1.742
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.12355 z - 0.11736) / (   z^2 - 1.8649 z + 0.87108)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1205 z - 0.1143
+  ----------------------
+  z^2 - 1.868 z + 0.8742
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.12045 z - 0.11426) / (   z^2 - 1.868 z + 0.87418)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1266 z - 0.1205
+  ---------------------
+  z^2 - 1.862 z + 0.868
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.12664 z - 0.12045) / (   z^2 - 1.8618 z + 0.86799)
+
+
+============================================================
+CONTROLADOR: CHR
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1166 z - 0.1154
+  ----------------------
+  2 z^2 - 3.86 z + 1.861
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.058286 z - 0.057705) / (   z^2 - 1.9302 z + 0.93073)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+   0.058 z - 0.05741
+  --------------------
+  z^2 - 1.93 z + 0.931
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.057995 z - 0.057414) / (   z^2 - 1.9304 z + 0.93103)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.05858 z - 0.058
+  ---------------------
+  z^2 - 1.93 z + 0.9304
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.058577 z - 0.057995) / (   z^2 - 1.9299 z + 0.93044)
+
+
+============================================================
+CONTROLADOR: IMC
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+      0.2 z - 0.1977
+  -----------------------
+  2 z^2 - 3.777 z + 1.779
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.099999 z - 0.098843) / (   z^2 - 1.8884 z + 0.8896)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+   0.09942 z - 0.09826
+  ----------------------
+  z^2 - 1.889 z + 0.8902
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.099421 z - 0.098265) / (   z^2 - 1.889 z + 0.89017)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+   0.1006 z - 0.09942
+  ---------------------
+  z^2 - 1.888 z + 0.889
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.10058 z - 0.099421) / (   z^2 - 1.8879 z + 0.88902)
+
+
+============================================================
+CONTROLADOR: Root Locus Clássico
+============================================================
+
+--- Tustin ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+     0.403 z - 0.3461
+  -----------------------
+  2 z^2 - 3.574 z + 1.631
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.20151 z - 0.17306) / (   z^2 - 1.7869 z + 0.81538)
+
+
+--- Euler Progressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.1873 z - 0.1588
+  ----------------------
+  z^2 - 1.801 z + 0.8296
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.18728 z - 0.15883) / (   z^2 - 1.8012 z + 0.82961)
+
+
+--- Euler Regressivo ---
+Malha fechada H(z) = Y(z)/R(z):
+
+Hz =
+ 
+    0.2157 z - 0.1873
+  ----------------------
+  z^2 - 1.773 z + 0.8012
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H(z) = (   0.21573 z - 0.18728) / (   z^2 - 1.7727 z + 0.80116)
+
+===================================================================
+                         DEADBEAT                                  
+===================================================================
+
+Controlador Deadbeat C(z):
+
+C_DB_z =
+ 
+  44.76 z - 44.24
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+C_DB(z) = (   44.7576 z - 44.2402) / (   z - 1)
+
+
+Malha fechada Deadbeat H(z):
+
+FT_MF_DB =
+ 
+    z - 0.9884
+  --------------
+  z^2 - 0.9884 z
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+Forma normalizada:
+H_DB(z) = (   z - 0.98844) / (   z^2 - 0.98844 z)
+
+
+Arquivo gerado: equacoes_controladores_discretizados.txt
+===================================================================
+              ANÁLISE DE ESTABILIDADE EM MALHA FECHADA             
+===================================================================
+
+============================================================
+Controlador: Root Locus - Cancelamento
+============================================================
+
+Método: Tustin
+Polos:
+    0.9884
+    0.9535
+
+Módulos dos polos:
+    0.9884
+    0.9535
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+    0.9883
+    0.9538
+
+Módulos dos polos:
+    0.9883
+    0.9538
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+    0.9885
+    0.9531
+
+Módulos dos polos:
+    0.9885
+    0.9531
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+============================================================
+Controlador: Z-N Aberta
+============================================================
+
+Método: Tustin
+Polos:
+   0.9178 + 0.0266i
+   0.9178 - 0.0266i
+
+Módulos dos polos:
+    0.9182
+    0.9182
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+   0.9197 + 0.0318i
+   0.9197 - 0.0318i
+
+Módulos dos polos:
+    0.9202
+    0.9202
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+   0.9159 + 0.0199i
+   0.9159 - 0.0199i
+
+Módulos dos polos:
+    0.9161
+    0.9161
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+============================================================
+Controlador: Z-N Fechada
+============================================================
+
+Método: Tustin
+Polos:
+   0.9324 + 0.0403i
+   0.9324 - 0.0403i
+
+Módulos dos polos:
+    0.9333
+    0.9333
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+   0.9340 + 0.0428i
+   0.9340 - 0.0428i
+
+Módulos dos polos:
+    0.9350
+    0.9350
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+   0.9309 + 0.0376i
+   0.9309 - 0.0376i
+
+Módulos dos polos:
+    0.9317
+    0.9317
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+============================================================
+Controlador: CHR
+============================================================
+
+Método: Tustin
+Polos:
+    0.9903
+    0.9398
+
+Módulos dos polos:
+    0.9903
+    0.9398
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+    0.9903
+    0.9402
+
+Módulos dos polos:
+    0.9903
+    0.9402
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+    0.9904
+    0.9395
+
+Módulos dos polos:
+    0.9904
+    0.9395
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+============================================================
+Controlador: IMC
+============================================================
+
+Método: Tustin
+Polos:
+    0.9884
+    0.9000
+
+Módulos dos polos:
+    0.9884
+    0.9000
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+    0.9884
+    0.9007
+
+Módulos dos polos:
+    0.9884
+    0.9007
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+    0.9885
+    0.8993
+
+Módulos dos polos:
+    0.9885
+    0.8993
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+============================================================
+Controlador: Root Locus Clássico
+============================================================
+
+Método: Tustin
+Polos:
+   0.8935 + 0.1308i
+   0.8935 - 0.1308i
+
+Módulos dos polos:
+    0.9030
+    0.9030
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Progressivo
+Polos:
+   0.9006 + 0.1363i
+   0.9006 - 0.1363i
+
+Módulos dos polos:
+    0.9108
+    0.9108
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+
+Método: Euler Regressivo
+Polos:
+   0.8864 + 0.1246i
+   0.8864 - 0.1246i
+
+Módulos dos polos:
+    0.8951
+    0.8951
+
+Resultado: ESTÁVEL, pois todos os polos estão dentro do círculo unitário.
+===================================================================
+              TABELA DE DESEMPENHO DOS CONTROLADORES              
+===================================================================
+
+Controlador                    RiseTime     SettlingTime    Overshoot (%)   Peak         PeakTime    
+---------------------------------------------------------------------------------------------------------
+Root Locus - Cancelamento      4.6000       8.3000          0.0000          0.9992       14.9000     
+Z-N Aberta                     0.9000       5.8000          12.0325         1.1203       2.4000      
+CHR                            4.0000       8.9000          0.0000          0.9999       59.9000     
+IMC                            2.0000       3.8000          0.0000          1.0000       9.9000      
+Root Locus Clássico            0.5000       4.1000          26.6129         1.2661       1.3000      
+===================================================================
+       GERANDO GRÁFICOS POR CONTROLADOR: TUSTIN x EULER P x EULER R
+===================================================================
+Gráficos comparativos de discretização gerados com sucesso.
+Controladores PI calculados e discretizados por Tustin, Euler Progressivo e Euler Regressivo.
+Root Locus clássico adicionado com Mp = 10% e ts = 4s.
+Deadbeat mantido separado para ajuste posterior.
+Análise gráfica de discretização do Root Locus por cancelamento gerada com sucesso.
+===================================================================
+           MODELOS MATEMÁTICOS DOS CONTROLADORES C(z)              
+===================================================================
+1. Controlador PI - Lugar das Raízes (Tustin):
+
+C_RL_Tustin =
+ 
+  4.163 z - 4.115
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+2. Controlador PI - Ziegler-Nichols Malha Aberta (Tustin):
+
+C_ZNA_Tustin =
+ 
+  13.68 z - 13.02
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+3. Controlador PI - Ziegler-Nichols Malha Fechada (Tustin):
+
+C_ZNC_Tustin =
+ 
+  11.06 z - 10.51
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+4. Controlador PI - CHR (Tustin):
+
+C_CHR_Tustin =
+ 
+  5.218 z - 5.165
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+5. Controlador PI - IMC (Tustin):
+
+C_IMC_Tustin =
+ 
+  8.951 z - 8.848
+  ---------------
+      2 z - 2
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+6. Controlador Discreto - Deadbeat (z):
+
+C_DB_z =
+ 
+  44.76 z - 44.24
+  ---------------
+       z - 1
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+===================================================================
+       MODELOS MATEMÁTICOS EM MALHA FECHADA COMPLETA FT_MF(z)      
+===================================================================
+1. Malha Fechada Completa - Lugar das Raízes (Tustin):
+
+FT_MF_RL =
+ 
+    0.09302 z - 0.09195
+  -----------------------
+  2 z^2 - 3.884 z + 1.885
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+2. Malha Fechada Completa - Ziegler-Nichols Malha Aberta (Tustin):
+
+FT_MF_ZNA =
+ 
+     0.3057 z - 0.2908
+  -----------------------
+  2 z^2 - 3.671 z + 1.686
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+3. Malha Fechada Completa - Ziegler-Nichols Malha Fechada (Tustin):
+
+FT_MF_ZNC =
+ 
+    0.2471 z - 0.2347
+  ----------------------
+  2 z^2 - 3.73 z + 1.742
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+4. Malha Fechada Completa - CHR (Tustin):
+
+FT_MF_CHR =
+ 
+    0.1166 z - 0.1154
+  ----------------------
+  2 z^2 - 3.86 z + 1.861
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+5. Malha Fechada Completa - IMC (Tustin):
+
+FT_MF_IMC =
+ 
+      0.2 z - 0.1977
+  -----------------------
+  2 z^2 - 3.777 z + 1.779
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+6. Malha Fechada Completa - Deadbeat:
+
+FT_MF_DB =
+ 
+    z - 0.9884
+  --------------
+  z^2 - 0.9884 z
+ 
+Sample time: 0.1 seconds
+Discrete-time transfer function.
+Model Properties
+===================================================================
+                  RESUMO DOS GANHOS (Kp e Ki)                      
+===================================================================
+1. Root Locus - Cancelamento:
+   Kp = 2.069693 
+   Ki = 0.240662 
+
+2. Z-N Aberta:
+   Kp = 6.674761 
+   Ki = 3.340721 
+
+3. Z-N Fechada:
+   Kp = 5.391163 
+   Ki = 2.770625 
+
+4. CHR:
+   Kp = 2.595740 
+   Ki = 0.260199 
+
+5. IMC:
+   Kp = 4.449840 
+   Ki = 0.517423 
+
+6. Root Locus Clássico:
+   Kp = 8.382258 
+   Ki = 12.733320 
+
+6. Deadbeat:
+   [Metodo de sintonia digital direta. Nao possui Kp e Ki de PI]
+===================================================================
+===================================================================
+       COEFICIENTES PARA O ARDUINO - FORMA INCREMENTAL DO PI        
+===================================================================
+Equação usada no Arduino:
+u(k) = u(k-1) + q0*e(k) + q1*e(k-1)
+ 
+
+--- Root Locus - Cancelamento ---
+Kp = 2.069693 | Ki = 0.240662
+  Tustin:
+     q0 = 2.08172634
+     q1 = -2.05766014
+  Euler Progressivo:
+     q0 = 2.06969324
+     q1 = -2.04562704
+  Euler Regressivo:
+     q0 = 2.09375944
+     q1 = -2.06969324
+
+--- Z-N Aberta ---
+Kp = 6.674761 | Ki = 3.340721
+  Tustin:
+     q0 = 6.84179676
+     q1 = -6.50772465
+  Euler Progressivo:
+     q0 = 6.67476070
+     q1 = -6.34068860
+  Euler Regressivo:
+     q0 = 7.00883281
+     q1 = -6.67476070
+
+--- Z-N Fechada ---
+Kp = 5.391163 | Ki = 2.770625
+  Tustin:
+     q0 = 5.52969472
+     q1 = -5.25263222
+  Euler Progressivo:
+     q0 = 5.39116347
+     q1 = -5.11410097
+  Euler Regressivo:
+     q0 = 5.66822597
+     q1 = -5.39116347
+
+--- CHR ---
+Kp = 2.595740 | Ki = 0.260199
+  Tustin:
+     q0 = 2.60875020
+     q1 = -2.58273035
+  Euler Progressivo:
+     q0 = 2.59574027
+     q1 = -2.56972042
+  Euler Regressivo:
+     q0 = 2.62176012
+     q1 = -2.59574027
+
+--- IMC ---
+Kp = 4.449840 | Ki = 0.517423
+  Tustin:
+     q0 = 4.47571163
+     q1 = -4.42396930
+  Euler Progressivo:
+     q0 = 4.44984047
+     q1 = -4.39809814
+  Euler Regressivo:
+     q0 = 4.50158280
+     q1 = -4.44984047
+
+--- Root Locus Clássico ---
+Kp = 8.382258 | Ki = 12.733320
+  Tustin:
+     q0 = 9.01892363
+     q1 = -7.74559162
+  Euler Progressivo:
+     q0 = 8.38225763
+     q1 = -7.10892562
+  Euler Regressivo:
+     q0 = 9.65558964
+     q1 = -8.38225763
+===================================================================
+--- Simulando a Rejeição a Perturbações (Carga no Motor) ---
+--- Projetando o Lugar das Raízes Clássico (Segunda Ordem) ---
+Ganhos do Método Clássico Calculados:
+   Kp_clas = 8.3823
+   Ki_clas = 12.7333
+   q0_clas = 9.01892363
+   q1_clas = -7.74559162
+
+===================================================================
+           BLOCO PRONTO PARA COPIAR NO CÓDIGO ARDUINO              
+===================================================================
+
+//=============================================================================
+// ESCOLHA DA SINTONIA E DO MÉTODO DE DISCRETIZAÇÃO
+//=============================================================================
+
+// SINTONIA_PI:
+//  1 -> Root Locus - Cancelamento
+//  2 -> Z-N Aberta
+//  3 -> Z-N Fechada
+//  4 -> CHR
+//  5 -> IMC
+//  6 -> Root Locus Clássico
+//
+// METODO_DISC:
+//  1 -> Tustin
+//  2 -> Euler Progressivo
+//  3 -> Euler Regressivo
+
+#define SINTONIA_PI 1
+#define METODO_DISC 1
+#define USAR_AJUSTE_MANUAL 0
+
+//=============================================================================
+// AJUSTE MANUAL
+//=============================================================================
+// Se quiser ajustar empiricamente na bancada, coloque:
+// #define USAR_AJUSTE_MANUAL 1
+// e altere Kp e Ki abaixo.
+//=============================================================================
+
+#if USAR_AJUSTE_MANUAL == 1
+
+// Ajuste manual inicial
+float Kp = 2.06969324f;
+float Ki = 0.24066200f;
+
+#else
+
+#if SINTONIA_PI == 1
+// Root Locus - Cancelamento
+float Kp = 2.06969324f;
+float Ki = 0.24066200f;
+
+#elif SINTONIA_PI == 2
+// Z-N Aberta
+float Kp = 6.67476070f;
+float Ki = 3.34072107f;
+
+#elif SINTONIA_PI == 3
+// Z-N Fechada
+float Kp = 5.39116347f;
+float Ki = 2.77062501f;
+
+#elif SINTONIA_PI == 4
+// CHR
+float Kp = 2.59574027f;
+float Ki = 0.26019850f;
+
+#elif SINTONIA_PI == 5
+// IMC
+float Kp = 4.44984047f;
+float Ki = 0.51742331f;
+
+#elif SINTONIA_PI == 6
+// Root Locus Clássico
+float Kp = 8.38225763f;
+float Ki = 12.73332011f;
+
+#else
+#error "SINTONIA_PI invalida."
+#endif
+
+#endif
+
+===================================================================
+===================================================================
+        COMPARAÇÃO EXPERIMENTAL DA BANCADA - COM E SEM CARGA       
+===================================================================
+Ignorando arquivo: 2_carga_7.txt
+Gráficos experimentais com e sem carga gerados com sucesso.
