@@ -35,3 +35,4 @@ O controle foi implementado em microcontrolador utilizando a forma incremental d
 
 ```math
 u(k) = u(k-1) + q_0e(k) + q_1e(k-1)
+<img width="1875" height="502" alt="image" src="https://github.com/user-attachments/assets/af76e193-d5cc-47d3-be24-a2adf3572325" />
